@@ -6,7 +6,7 @@ import Sidebar from '../_components/sidebar';
 
 import { userActions } from '../_actions';
 
-class HomePage extends React.Component {
+class UsersPage extends React.Component {
     componentDidMount() {
         this.props.dispatch(userActions.getAll());
     }
@@ -22,8 +22,7 @@ class HomePage extends React.Component {
                 <Header/>
                 <Sidebar/>
             <div className="col-md-6 col-md-offset-3">
-                <h1>Hi {user.firstName}!</h1>
-                <p>You're logged in with React!!</p>
+                <Link to="/create-user">Create user</Link>
                 <h3>All registered users:</h3>
                 {users.loading && <em>Loading users...</em>}
                 {users.error && <span className="text-danger">ERROR: {users.error}</span>}
@@ -65,5 +64,5 @@ function mapStateToProps(state) {
     };
 }
 
-const connectedHomePage = connect(mapStateToProps)(HomePage);
-export { connectedHomePage as HomePage };
+const connectedUsersPage = connect(mapStateToProps)(UsersPage);
+export { connectedUsersPage as UsersPage };
