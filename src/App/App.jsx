@@ -8,8 +8,6 @@ import { PrivateRoute } from '../_components';
 import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
-import { UsersPage } from '../UsersPage';
-import { UserCreatePage } from '../UserCreatePage';
 
 class App extends React.Component {
     constructor(props) {
@@ -23,7 +21,6 @@ class App extends React.Component {
     }
 
     render() {
-
         const { alert } = this.props;
         return (
             <div className="jumbotron">
@@ -37,8 +34,6 @@ class App extends React.Component {
                                 <PrivateRoute exact path="/" component={HomePage} />
                                 <Route path="/login" component={LoginPage} />
                                 <Route path="/register" component={RegisterPage} />
-                                <Route path="/users" component={UsersPage} />
-                                <Route path="/create-user" component={UserCreatePage} />
                             </div>
                         </Router>
                     </div>
